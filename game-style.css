@@ -11,26 +11,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden; /* Prevents body from scrolling */
+    min-height: 100vh;
+    padding: 10px;
 }
 
 .container {
     text-align: center;
     background-color: #fff0f5; /* Lavender blush background */
-    padding: 30px;
+    padding: 20px;
     border: 2px solid #db7093; /* Pale violet red border */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
     width: 300px;
-    max-height: 90vh; /* Ensures container fits within viewport */
-    overflow-y: auto; /* Adds vertical scrollbar if needed */
+    margin: 10px;
+    overflow: auto;
 }
 
 h2 {
     font-size: 20px;
     color: #db7093; /* Pale violet red color */
     margin-bottom: 20px;
+    word-wrap: break-word;
 }
 
 h2 span {

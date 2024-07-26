@@ -18,6 +18,7 @@
             height: 100%;
             z-index: 9999;
             cursor: pointer;
+            background: rgba(255, 255, 255, 0); /* Invisible background */
         }
     </style>
 </head>
@@ -36,11 +37,19 @@
     <!-- JavaScript to Play Sound and Show Content After Delay -->
     <script>
         document.getElementById('audio-overlay').addEventListener('click', function() {
+            // Play the sound
             document.getElementById('background-sound').play();
+            // Hide the overlay
             document.getElementById('audio-overlay').style.display = 'none';
+            // Show the content after 5 seconds
             setTimeout(function() {
                 document.getElementById('content').classList.remove('hidden-content');
-            }, 10000);
+            }, 5000);
+        });
+        
+        // For desktop users who might not click immediately
+        window.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('audio-overlay').click();
         });
     </script>
 </body>

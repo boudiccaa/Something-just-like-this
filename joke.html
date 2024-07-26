@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeah</title>
+    <title>Joke</title>
     <link rel="stylesheet" href="game-style.css">
     <style>
         .hidden-content {
             display: none;
+        }
+        #audio-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -21,17 +30,19 @@
     <!-- Audio Element -->
     <audio id="background-sound" src="rickroll.mp3"></audio>
 
+    <!-- Overlay for Starting Audio -->
+    <div id="audio-overlay"></div>
+
     <!-- JavaScript to Play Sound and Show Content After Delay -->
     <script>
-        window.addEventListener('load', function() {
-            // Play the sound immediately
+        document.getElementById('audio-overlay').addEventListener('click', function() {
             document.getElementById('background-sound').play();
-
-            // Show the content after 5 seconds (5000 milliseconds)
+            document.getElementById('audio-overlay').style.display = 'none';
             setTimeout(function() {
                 document.getElementById('content').classList.remove('hidden-content');
-            }, 5000);
+            }, 10000);
         });
     </script>
 </body>
 </html>
+
